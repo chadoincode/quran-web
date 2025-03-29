@@ -7,7 +7,7 @@ type AyatListProps = {
 
 const AyatList = ({ayats}: AyatListProps) => {
   return(
-    <div>
+    <div className="flex flex-col gap-3 p-5 pt-0">
       {ayats.map((ayat) => (
         <AyatCard 
           key={ayat.nomorAyat}

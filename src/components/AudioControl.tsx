@@ -1,5 +1,5 @@
-import PlayButton from '../assets/PlayButton.png'
-import PauseButton from '../assets/PauseButton.png'
+import PlayIcon from '../assets/PlayIcon.svg'
+import PauseIcon from '../assets/PauseIcon.svg'
 
 type AudioControlProps = {
   currentReciter: string,
@@ -25,11 +25,11 @@ const AudioControl = ({
   ]
 
   return(
-    <div>
+    <div className='mx-5 flex justify-between text-light gap-4 items-center my-5'>
       <select
         value={currentReciter}
         onChange={(e) => changeReciter(e.target.value)}
-        className=''
+        className='bg-dark rounded-lg p-3 w-full text-light'
       >
         {reciters.map((reciter) => (
           <option key={reciter.id} value={reciter.id}>
@@ -37,13 +37,13 @@ const AudioControl = ({
           </option>
         ))}
       </select>
-      <div className=''
+      <div className='bg-primary rounded-full p-2.5 cursor-pointer flex justify-center pr-3 items-center'
         onClick={audioPlaying ? onPause : onPlay}
       >
         {audioPlaying ? (
-          <img src={PauseButton} alt="Pause" />
+          <img src={PauseIcon} alt="Pause" className='w-fit h-fit'/>
         ) : (
-          <img src={PlayButton} alt="Play" />
+          <img src={PlayIcon} alt="Play" className='w-fit h-fit'/>
         )}
       </div>
     </div>
